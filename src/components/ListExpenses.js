@@ -9,7 +9,7 @@ const ListExpenses = (props) => {
   }, [expenseId]);
 
   return (
-    <table className="table">
+    <table className="table table-striped mt-5">
         <thead className="table-secondary">
             <tr>
               <th scope="col">Location</th>
@@ -26,7 +26,7 @@ const ListExpenses = (props) => {
               <td>{newExpense.description}</td>
               <td>${newExpense.amount}</td>
               <td>{newExpense.date}</td>
-              <td><button type="button" class="btn btn-outline-danger btn-sm rounded-0" onClick={() => setSelectedExpense(newExpense.id)}> X </button></td>
+              <td><button type="button" className="btn btn-outline-danger btn-sm rounded-circle" onClick={() => setSelectedExpense(newExpense.id)}> X </button></td>
             </tr>
           ))}
           </tbody>
