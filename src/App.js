@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ExpenseForm from "./components/ExpenseForm";
+import ListExpenses from "./components/ListExpenses";
+import "bootstrap-5.0.1-dist/css/bootstrap.css";
 
-function App() {
+const App = () => {
+  const [expenses, setExpenses] = useState([]);
+
+  const handleNewExpense = (newExpense) => {
+    setExpenses([newExpense, ...expenses]);
+  };
+
+  const handleRemoveListItem = (expenseId) => {
+    setExpenses(expenses.filter((expense) => expense.id !== expenseId));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container-md">
+        <h1 className="text-center">EXPENSE TRACKER</h1>
+        <ExpenseForm onSubmitNewExpense={handleNewExpense} />
+        <ListExpenses list={expenses} onDeleteAction={handleRemoveListItem} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
