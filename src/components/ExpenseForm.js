@@ -66,9 +66,9 @@ const ExpenseForm = (props) => {
 
   return (
     <form className="row g-3" onSubmit={submitHandler}>
-       <div class="row justify-content-md-center">
+       <div className="row justify-content-md-center">
         <div className="col-md-4">
-          <label for="location" >Location</label>
+          <label htmlFor="location" >Location</label>
           <input
             className="form-control"
             id="location"
@@ -80,7 +80,7 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="col-md-4">
-          <label for="description">Description</label>
+          <label htmlFor="description">Description</label>
           <input
             className="form-control"
             id="description"
@@ -92,9 +92,9 @@ const ExpenseForm = (props) => {
           />
         </div>
         </div>
-        <div class="row justify-content-md-center">
+        <div className="row justify-content-md-center">
         <div className="col-md-4">
-          <label for="amount">Amount</label>
+          <label htmlFor="amount">Amount</label>
           <input
             className="form-control"
             id="amount"
@@ -108,7 +108,7 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="col-md-4">
-          <label for="date">Date</label>
+          <label htmlFor="date">Date</label>
           <input
             className="form-control"
             id="date"

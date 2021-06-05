@@ -19,7 +19,7 @@ const ListExpenses = (props) => {
               <th scope="col">Delete</th>
             </tr>
         </thead>
-        <tbody class="table table-striped fs-4">
+        <tbody className="table table-striped fs-4">
          {props.list.map((newExpense) => (
            <tr key={newExpense.id}>
               <td>{newExpense.location}</td>
