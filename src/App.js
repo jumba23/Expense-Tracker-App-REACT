@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="container-md">
+      <div className="container">
         <h1 className="text-center mt-3">EXPENSE TRACKER</h1>
         <ExpenseForm onSubmitNewExpense={handleNewExpense} />
         <ListExpenses list={expenses} onDeleteAction={handleRemoveListItem} />

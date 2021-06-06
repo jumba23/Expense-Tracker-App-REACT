@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import 'bootstrap-5.0.1-dist/css/bootstrap.css';
+import "bootstrap-5.0.1-dist/css/bootstrap.css";
 
 const ExpenseForm = (props) => {
   const [enteredLocation, setLocation] = useState("");
@@ -50,13 +50,13 @@ const ExpenseForm = (props) => {
     e.preventDefault();
 
     const newExpense = {
-        id: Date.now(),
-        location: enteredLocation,
-        description: enteredDescription,
-        amount: enteredAmount,
-        date: formatDate(),
-    }
-     
+      id: Date.now(),
+      location: enteredLocation,
+      description: enteredDescription,
+      amount: enteredAmount,
+      date: formatDate(),
+    };
+
     props.onSubmitNewExpense(newExpense);
     setLocation("");
     setDescription("");
@@ -66,9 +66,9 @@ const ExpenseForm = (props) => {
 
   return (
     <form className="row g-3 mt-3" onSubmit={submitHandler}>
-       <div className="row justify-content-md-center">
+      <div className="row justify-content-md-center">
         <div className="col-md-4">
-          <label htmlFor="location" >Location</label>
+          <label htmlFor="location">Location</label>
           <input
             className="form-control"
             id="location"
@@ -91,8 +91,8 @@ const ExpenseForm = (props) => {
             required
           />
         </div>
-        </div>
-        <div className="row justify-content-md-center">
+      </div>
+      <div className="row justify-content-md-center mt-3">
         <div className="col-md-4">
           <label htmlFor="amount">Amount</label>
           <input
@@ -112,17 +112,17 @@ const ExpenseForm = (props) => {
           <input
             className="form-control"
             id="date"
-            type="date" 
+            type="date"
             onChange={dateHandler}
-            value={enteredDate} 
+            value={enteredDate}
             required
           />
         </div>
-        </div>
-        <div className="col-12 text-center">
-          <button type="submit" className="btn btn-primary mt-3">
-             Add Expense
-          </button>
+      </div>
+      <div className="col-12 text-center">
+        <button type="submit" className="btn btn-primary mt-3">
+          Add Expense
+        </button>
       </div>
     </form>
   );

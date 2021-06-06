@@ -3,12 +3,20 @@
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
   margin: 0 auto;
-  background-color: #dd825e;
+  background-color: #beb8b6;
 }
 
+.table {
+  margin: 0 auto;
+  font-weight: bold;
+  width: 64%;
+}
 
+.row {
+  padding-left: 17px;
+}

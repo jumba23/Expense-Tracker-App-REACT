@@ -1,35 +1,34 @@
-import React, { useEffect, useState } from "react";
-import 'bootstrap-5.0.1-dist/css/bootstrap.css';
+import React from "react";
+import "bootstrap-5.0.1-dist/css/bootstrap.css";
 
 const ListExpenses = (props) => {
-  const [expenseId, setSelectedExpense] = useState("");
-
-  useEffect(() => {
-    props.onDeleteAction(expenseId);
-  }, [expenseId]);
-
   return (
-    <table className="table table-striped mt-5">
-        <thead className="table-secondary">
-            <tr>
-              <th scope="col">Location</th>
-              <th scope="col">Description</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Date</th>
-              <th scope="col">Delete</th>
-            </tr>
-        </thead>
-        <tbody className="table table-striped fs-4">
-         {props.list.map((newExpense) => (
-           <tr key={newExpense.id}>
-              <td>{newExpense.location}</td>
-              <td>{newExpense.description}</td>
-              <td>${newExpense.amount}</td>
-              <td>{newExpense.date}</td>
-              <td><button type="button" className="btn btn-outline-danger btn-sm rounded-circle" onClick={() => setSelectedExpense(newExpense.id)}> X </button></td>
-            </tr>
-          ))}
-          </tbody>
+    <table className="table table-striped table-hover text-center mt-5">
+      <thead className="table-secondary">
+        <tr>
+          <th>Location</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody className="table">
+        {props.list.map((newExpense) => (
+          <tr key={newExpense.id}>
+            <td class="align-middle">{newExpense.location}</td>
+            <td class="align-middle">{newExpense.description}</td>
+            <td class="align-middle">${newExpense.amount}</td>
+            <td class="align-middle">{newExpense.date}</td>
+            <td class="align-middle">
+              <button
+                type="button"
+                className="btn btn-outline-danger btn-sm"
+                onClick={() => props.onDeleteAction(newExpense.id)}>{" "}X{" "}</button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
