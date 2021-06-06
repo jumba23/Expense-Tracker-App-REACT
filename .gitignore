@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/public
 /.pnp
 .pnp.js
 
@@ -12,6 +13,7 @@
 /build
 
 # misc
+App Screen.PNG
 .DS_Store
 .env.local
 .env.development.local
