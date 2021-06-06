@@ -76,6 +76,7 @@ const ExpenseForm = (props) => {
             placeholder="Where"
             onChange={locationHandler}
             value={enteredLocation}
+            autoComplete='off'
             required
           />
         </div>
@@ -88,6 +89,7 @@ const ExpenseForm = (props) => {
             placeholder="Expense Descrition"
             onChange={descriptionHandler}
             value={enteredDescription}
+            autoComplete='off'
             required
           />
         </div>
@@ -104,6 +106,7 @@ const ExpenseForm = (props) => {
             placeholder="$$$"
             onChange={amountHandler}
             value={enteredAmount}
+            autoComplete='off'
             required
           />
         </div>
@@ -115,6 +118,7 @@ const ExpenseForm = (props) => {
             type="date"
             onChange={dateHandler}
             value={enteredDate}
+            autoComplete='off'
             required
           />
         </div>
