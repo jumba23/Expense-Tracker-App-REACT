@@ -3,7 +3,8 @@ import "bootstrap-5.0.1-dist/css/bootstrap.css";
 
 const ListExpenses = (props) => {
   return (
-    <table className="table table-striped table-hover text-center mt-5">
+    <div className="container">
+      <table className="table table-striped table-hover text-center mt-5">
       <thead className="table-secondary">
         <tr>
           <th>Location</th>
@@ -30,6 +31,7 @@ const ListExpenses = (props) => {
         ))}
       </tbody>
     </table>
+    </div>
   );
 };
 export default ListExpenses;

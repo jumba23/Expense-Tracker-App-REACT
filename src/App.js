@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ListExpenses from "./components/ListExpenses";
 import "bootstrap-5.0.1-dist/css/bootstrap.css";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem("saveExpenses")) {
+      setExpenses(JSON.parse(localStorage.getItem("saveExpenses")));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (expenses) {
+      localStorage.setItem("saveExpenses", JSON.stringify(expenses));
+    }
+  }, [expenses]);
 
   const handleNewExpense = (newExpense) => {
     setExpenses([newExpense, ...expenses]);
@@ -15,8 +27,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <div className="container">
+    <div>
+      <div className="container-md">
         <h1 className="text-center mt-3">EXPENSE TRACKER</h1>
         <ExpenseForm onSubmitNewExpense={handleNewExpense} />
         <ListExpenses list={expenses} onDeleteAction={handleRemoveListItem} />

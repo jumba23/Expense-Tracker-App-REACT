@@ -66,7 +66,7 @@ const ExpenseForm = (props) => {
 
   return (
     <form className="row g-3 mt-3" onSubmit={submitHandler}>
-      <div className="row justify-content-md-center">
+      <div className="row justify-content-center">
         <div className="col-md-4">
           <label htmlFor="location">Location</label>
           <input
@@ -92,7 +92,7 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <div className="row justify-content-md-center mt-3">
+      <div className="row justify-content-center mt-3">
         <div className="col-md-4">
           <label htmlFor="amount">Amount</label>
           <input
