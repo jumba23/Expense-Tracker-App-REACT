@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ExpenseForm from "./components/ExpenseForm";
-import ListExpenses from "./components/ListExpenses";
+import ExpenseList from "./components/ExpenseList";
 import "bootstrap/css/bootstrap.css";
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
     setExpenses([newExpense, ...expenses]);
   };
 
-  const handleRemoveListItem = (expenseId) => {
+  const deleteRow = (expenseId) => {
     setExpenses(expenses.filter((expense) => expense.id !== expenseId));
   };
 
@@ -30,8 +30,8 @@ const App = () => {
     <div>
       <div className="container-md">
         <h1 className="text-center mt-3">EXPENSE TRACKER</h1>
-        <ExpenseForm onSubmitNewExpense={handleNewExpense} />
-        <ListExpenses list={expenses} onDeleteAction={handleRemoveListItem} />
+        <ExpenseForm handleNewExpense={handleNewExpense} />
+        <ExpenseList expenses={expenses} deleteRow={deleteRow} />
       </div>
     </div>
   );

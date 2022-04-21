@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/css/bootstrap.css";
 
-const ExpenseForm = (props) => {
+const ExpenseForm = ({ handleNewExpense }) => {
   const [enteredLocation, setLocation] = useState("");
   const [enteredDescription, setDescription] = useState("");
   const [enteredAmount, setAmount] = useState("");
@@ -24,29 +24,15 @@ const ExpenseForm = (props) => {
   };
 
   const formatDate = () => {
-    const newDate = enteredDate.split("-");
-    const day = newDate[2];
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    const monthFormated = months[newDate[1] - 1];
-    const year = newDate[0];
-    const dateFormat = `${monthFormated}/${day}/${year}`;
-    return dateFormat;
+    let date = new Date(enteredDate);
+    const options = {
+      dateStyle: "medium",
+      timeZone: "UTC",
+    };
+    return new Intl.DateTimeFormat("en-US", options).format(date);
   };
 
-  const submitHandler = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newExpense = {
@@ -57,7 +43,7 @@ const ExpenseForm = (props) => {
       date: formatDate(),
     };
 
-    props.onSubmitNewExpense(newExpense);
+    handleNewExpense(newExpense);
     setLocation("");
     setDescription("");
     setAmount("");
@@ -65,7 +51,7 @@ const ExpenseForm = (props) => {
   };
 
   return (
-    <form className="row g-3 mt-3" onSubmit={submitHandler}>
+    <form className="row g-3 mt-3" onSubmit={handleSubmit}>
       <div className="row justify-content-center">
         <div className="col-md-4">
           <label htmlFor="location">Location</label>
@@ -76,7 +62,7 @@ const ExpenseForm = (props) => {
             placeholder="Where"
             onChange={locationHandler}
             value={enteredLocation}
-            autoComplete='off'
+            autoComplete="off"
             required
           />
         </div>
@@ -89,7 +75,7 @@ const ExpenseForm = (props) => {
             placeholder="Expense Descrition"
             onChange={descriptionHandler}
             value={enteredDescription}
-            autoComplete='off'
+            autoComplete="off"
             required
           />
         </div>
@@ -106,7 +92,7 @@ const ExpenseForm = (props) => {
             placeholder="$$$"
             onChange={amountHandler}
             value={enteredAmount}
-            autoComplete='off'
+            autoComplete="off"
             required
           />
         </div>
@@ -118,7 +104,7 @@ const ExpenseForm = (props) => {
             type="date"
             onChange={dateHandler}
             value={enteredDate}
-            autoComplete='off'
+            autoComplete="off"
             required
           />
         </div>
