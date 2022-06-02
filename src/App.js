@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
-import "bootstrap/css/bootstrap.css";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);

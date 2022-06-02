@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/css/bootstrap.css";
+
 
 const ExpenseForm = ({ handleNewExpense }) => {
   const [enteredLocation, setLocation] = useState("");

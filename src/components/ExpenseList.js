@@ -1,6 +1,6 @@
 import React from "react";
 import ExpenseRow from "./ExpenseRow";
-import "bootstrap/css/bootstrap.css";
+
 
 const ListExpenses = ({ expenses, deleteRow }) => {
   return (
