@@ -1,13 +1,26 @@
-# Expense Tracker App
-This is simple Expense Tracker app. Written using HTML, CSS, JavaScript, REACT, and Bootstrap. The app is deployed using Heroku.
+# Design layout 
 
-Try it - [Expense Tracker](https://react-expense-tracker-app-21.herokuapp.com/)
+1. LANDING/HOME PAGE
 
-# Application 
-![App Screen](https://user-images.githubusercontent.com/80366503/120963688-e2033100-c716-11eb-8cb5-87b9f58d928f.PNG)
+    * light and dark mode button available
+    * menu option with ABOUT and  SEND REPORT (EMAIL)
+    * ADD transaction button
+        will open a form for us to add an expense
 
-# Summary 
-This was my first app where I was using React and Bootstrap. Even though React is pretty similar to vanilla JavaScript, there were some new concepts I had to get familiar with.  At the end it was one particularly challenging and fun experience. Aso, this was my first app deployment done using Heroku and it was seamless process. 
+    tap/click options from this page
 
-# About Me
-Goran Cvetic - Software Developer in transition - [LinkedIn](https://www.linkedin.com/in/goran-cvetic-9aaa4288/) 
+        1.1 Recent transaction - by clicking on any of the expenses - TRANSACTION DETAILS page will come up
+                               - EDIT button will be available
+
+        1.2 Total Income - will open the same page available in Dashboard dropdown menu - INCOME
+                         - we can edit current and and past income entries
+                         - graph of visual income presentation will be available
+                         - monthly and annual view 
+
+        1.3 Total Expenses - will open the same page available in Dashboard dropdown menu - EXPENSES
+                           - we can edit current and and past expense entries
+                           - graph of visual income presentation will be available
+                           - monthly and annual view 
+                           - search form
+                           - categories tabs(FOOD, ENTERTAINMENT, UTILITIES, TRANSPORTATION, TRAVEL, OTHER)
+    
